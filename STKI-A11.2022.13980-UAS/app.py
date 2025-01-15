@@ -113,7 +113,7 @@ df_combined['Title'] = df_combined['Title'].str.lower()
 
 # Menampilkan hasil berdasarkan query dalam session state
 if st.session_state.search_query:
-    tokenized_query = st.session_state.search_query.lower().split()  # Pastikan lowercase
+    tokenized_query = st.session_state.search_query.lower().split()
     doc_scores = bm25.get_scores(tokenized_query)
     top_n = bm25.get_top_n(tokenized_query, df_combined.index, n=10)
 
