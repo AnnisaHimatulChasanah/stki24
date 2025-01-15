@@ -105,18 +105,24 @@ st.markdown("<hr style='border: 1px solid #B9BDB1;'>", unsafe_allow_html=True)
 if query:
     st.session_state.search_query = query
 
+# Normalisasi teks di clean_instructions dan Title
+df_combined['clean_instructions'] = df_combined['clean_instructions'].apply(
+    lambda x: ' '.join([' '.join(step) for step in x]).lower()
+)
+df_combined['Title'] = df_combined['Title'].str.lower()
+
 # Menampilkan hasil berdasarkan query dalam session state
 if st.session_state.search_query:
-    tokenized_query = query.split()
+    tokenized_query = st.session_state.search_query.lower().split()  # Pastikan lowercase
     doc_scores = bm25.get_scores(tokenized_query)
     top_n = bm25.get_top_n(tokenized_query, df_combined.index, n=10)
 
     # Simulasi hasil ideal (misalnya, semua resep yang mengandung query di Title)
-    ideal_results = df_combined[df_combined['Title'].str.contains(query, case=False, na=False)].index
+    ideal_results = df_combined[df_combined['Title'].str.contains(query.lower(), case=False, na=False)].index
 
     # Tampilkan rekomendasi
     st.markdown("<h3 style='color: #B7CBC0;'>✨ Top 10 Rekomendasi:</h3>", unsafe_allow_html=True)
-    recipe_titles = df_combined.loc[top_n, 'Title'].tolist()
+    recipe_titles =  df_combined.loc[top_n, 'Title'].apply(str.title).tolist()
 
     # Buat tombol untuk setiap resep
     for idx, title in zip(top_n, recipe_titles):
