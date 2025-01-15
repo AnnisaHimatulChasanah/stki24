@@ -1,12 +1,14 @@
 import streamlit as st
 from rank_bm25 import BM25Okapi
 import pandas as pd
+import os
 
-# Load DataFrames
-df_ayam = pd.read_pickle('processed/df_indoRecipesAyam.pkl')
-df_kambing = pd.read_pickle('processed/df_indoRecipesKambing.pkl')
-df_telur = pd.read_pickle('processed/df_indoRecipesTelur.pkl')
-df_udang = pd.read_pickle('processed/df_indoRecipesUdang.pkl')
+#load dataset
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Mendapatkan jalur direktori saat ini
+df_ayam = pd.read_pickle(os.path.join(BASE_DIR, 'processed/df_indoRecipesAyam.pkl'))
+df_kambing = pd.read_pickle(os.path.join(BASE_DIR, 'processed/df_indoRecipesKambing.pkl'))
+df_telur = pd.read_pickle(os.path.join(BASE_DIR, 'processed/df_indoRecipesTelur.pkl'))
+df_udang = pd.read_pickle(os.path.join(BASE_DIR, 'processed/df_indoRecipesUdang.pkl'))
 
 # Menggabungkan semua DataFrame
 df_combined = pd.concat([df_ayam, df_kambing, df_telur, df_udang], ignore_index=True)
