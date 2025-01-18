@@ -9,9 +9,13 @@ Aplikasi berbasis Streamlit ini menggunakan algoritma BM25 untuk mencari resep m
 Dataset yang digunakan terdiri dari beberapa file CSV yang berisi resep masakan dari berbagai bahan seperti ayam, kambing, telur, dan udang.
 Setiap resep memiliki informasi seperti Tittle (judul), Ingredients (bahan-bahan), Steps(langkah-langkah pembuatan), dan Loves (jumlah likes). 
 ## Cara Menjalankan
-1. Pastikan semua dependensi diinstal dengan menjalankan pip install -r requirements.txt
-2. Jalankan aplikasi Streamlit: streamlit run app.py
-3. Buka aplikasi di browser: Aplikasi akan berjalan di http://localhost:8501
+1. Pastikan semua dependensi diinstal dengan menjalankan
+   ```bash
+   pip install -r requirements.txt
+3. Jalankan aplikasi Streamlit:
+   ```bash
+   streamlit run app.py
+5. Buka aplikasi di browser: Aplikasi akan berjalan di http://localhost:8501
 ## Cara penggunaan 
 1. Ketikkan kata kunci di kolom pencarian (contoh: "udang")
 2. Lihat daftar rekomendasi Top 10 yang relevan
