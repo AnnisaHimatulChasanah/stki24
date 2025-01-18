@@ -2,9 +2,9 @@
 Proyek ini bertujuan mengembangkan search engine untuk membantu pengguna menemukan resep masakan Indonesia berdasarkan bahan yang mereka miliki.
 Aplikasi berbasis Streamlit ini menggunakan algoritma BM25 untuk mencari resep masakan Indonesia yang paling relevan berdasarkan kata kunci yang dimasukkan.
 ## Fitur
-Pencarian Resep: Cari resep masakan Indonesia menggunakan kata kunci seperti "ayam", "kambing", "udang", dan lainnya.
-Rekomendasi Teratas: Aplikasi akan menampilkan 10 resep terbaik sesuai dengan kata kunci yang dimasukkan.
-Detail Resep: Klik pada nama resep untuk melihat bahan-bahan dan langkah-langkah memasaknya.
+1. Pencarian Resep: Cari resep masakan Indonesia menggunakan kata kunci seperti "ayam", "kambing", "udang", dan lainnya.
+2. Rekomendasi Teratas: Aplikasi akan menampilkan 10 resep terbaik sesuai dengan kata kunci yang dimasukkan.
+3. Detail Resep: Klik pada nama resep untuk melihat bahan-bahan dan langkah-langkah memasaknya.
 ## Dataset
 Dataset yang digunakan terdiri dari beberapa file CSV yang berisi resep masakan dari berbagai bahan seperti ayam, kambing, telur, dan udang.
 Setiap resep memiliki informasi seperti Tittle (judul), Ingredients (bahan-bahan), Steps(langkah-langkah pembuatan), dan Loves (jumlah likes). 
